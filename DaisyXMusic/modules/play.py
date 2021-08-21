@@ -186,7 +186,7 @@ def updated_stats(chat, queue, vol=100):
 
 
 def r_ply(type_):
-    if type_ == "oynat":
+    if type_ == "play":
         pass
     else:
         pass
@@ -316,7 +316,7 @@ async def p_cb(b, cb):
 
 
 @Client.on_callback_query(
-    filters.regex(pattern=r"^(oynat|pause|skip|leave|puse|resume|menu|cls)$")
+    filters.regex(pattern=r"^(play|pause|skip|leave|puse|resume|menu|cls)$")
 )
 @cb_admin_check
 async def m_cb(b, cb):
@@ -343,10 +343,10 @@ async def m_cb(b, cb):
             callsmusic.pause(chet_id)
             await cb.answer("Müzik Duraklatıldı!")
             await cb.message.edit(
-                updated_stats(m_chat, qeue), reply_markup=r_ply("oynat")
+                updated_stats(m_chat, qeue), reply_markup=r_ply("play)
             )
 
-    elif type_ == "oynat":
+    elif type_ == "play":
         if (chet_id not in callsmusic.active_chats) or (
             callsmusic.active_chats[chet_id] == "playing"
         ):
@@ -452,8 +452,8 @@ async def m_cb(b, cb):
             await cb.answer("Chat is not connected!", show_alert=True)
 
 
-@Client.on_message(command("oynat") & other_filters)
-async def oynat(_, message: Message):
+@Client.on_message(command("play") & other_filters)
+async def play(_, message: Message):
     global que
     global useer
     if message.chat.id in DISABLED_GROUPS:
