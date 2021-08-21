@@ -343,7 +343,7 @@ async def m_cb(b, cb):
             callsmusic.pause(chet_id)
             await cb.answer("Müzik Duraklatıldı!")
             await cb.message.edit(
-                updated_stats(m_chat, qeue), reply_markup=r_ply("play)
+                updated_stats(m_chat, qeue), reply_markup=r_ply("play")
             )
 
     elif type_ == "play":
