@@ -193,10 +193,10 @@ def r_ply(type_):
     mar = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("⏹", "Sesten Çık"),
-                InlineKeyboardButton("⏸", "Durdur"),
-                InlineKeyboardButton("▶️", "Devam"),
-                InlineKeyboardButton("⏭", "Geç"),
+                InlineKeyboardButton("⏹", "levae"),
+                InlineKeyboardButton("⏸", "pause"),
+                InlineKeyboardButton("▶️", "resume"),
+                InlineKeyboardButton("⏭", "skip"),
             ],
             [
                 InlineKeyboardButton("Müzik Listesi 📖", "playlist"),
@@ -407,10 +407,10 @@ async def m_cb(b, cb):
         marr = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⏹", "Ayrıl"),
-                    InlineKeyboardButton("⏸", "Durdur"),
-                    InlineKeyboardButton("▶️", "Devam ettir"),
-                    InlineKeyboardButton("⏭", "Geç"),
+                    InlineKeyboardButton("⏹", "leave"),
+                    InlineKeyboardButton("⏸", "pause"),
+                    InlineKeyboardButton("▶️", "resume"),
+                    InlineKeyboardButton("⏭", "skip"),
                 ],
                 [
                     InlineKeyboardButton("Müziklist 📖", "playlist"),
@@ -458,7 +458,7 @@ async def oynat(_, message: Message):
     global useer
     if message.chat.id in DISABLED_GROUPS:
         return    
-    lel = await message.reply("🔄 <b>Yükleniyor</b>")
+    lel = await message.reply("🔄 <b>Yükleniyor 📥</b>")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
 
@@ -570,7 +570,7 @@ async def oynat(_, message: Message):
         )
     elif urls:
         query = toxt
-        await lel.edit("🎵 <b>Yükleniyor</b>")
+        await lel.edit("🎵 <b>Yükleniyor 📥</b>")
         ydl_opts = {"format": "bestaudio/best"}
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
@@ -723,7 +723,7 @@ async def oynat(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption=f"#⃣ Your requested song <b>queued</b> at position {position}!",
+            caption=f"#⃣ İstediğiniz şarkı <b>sıraya</b> pozisyonda alındı {position}!",
             reply_markup=keyboard,
         )
         os.remove("final.png")
@@ -745,7 +745,7 @@ async def oynat(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="▶️ <b>Playing</b> here the song requested by {} via Youtube Music 😎".format(
+            caption="▶️ <b>Oynatılan</b> burada şarkı istendi {} youtube music aracılığıyla 😎".format(
                 message.from_user.mention()
             ),
         )
@@ -821,7 +821,7 @@ async def ytplay(_, message: Message):
     for i in message.command[1:]:
         query += " " + str(i)
     print(query)
-    await lel.edit("🎵 <b>Yükleniyor</b>")
+    await lel.edit("🎵 <b>Yükleniyor 📥</b>")
     ydl_opts = {"format": "bestaudio/best"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -881,7 +881,7 @@ async def ytplay(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption=f"#⃣ Your requested song <b>queued</b> at position {position}!",
+            caption=f"#⃣ İstediğiniz şarkı <b>sıraya</b> pozisyonda alınmıştır {position}!",
             reply_markup=keyboard,
         )
         os.remove("final.png")
@@ -903,7 +903,7 @@ async def ytplay(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="▶️ <b>Playing</b> İşte youtube müzik aracılığıyla {} tarafından talep edilen şarkı 😎".format(
+            caption="▶️ <b>Oynatılan</b> Youtube müzik aracılığıyla {} Sizn tarafınızdan talep edilen şarkı 😎".format(
                 message.from_user.mention()
             ),
         )
@@ -1294,7 +1294,6 @@ async def lol_cb(b, cb):
         await b.send_photo(chat_id,
             photo="final.png",
             reply_markup=keyboard,
-            caption=f"▶️ <b>Oynatılıyor..</b> işte şarkı tarafından talep {r_by.mention} YouTube müzik aracılığıyla 😎",
-        )
+            caption=f"▶️ <b>Oynatılıyor..</b> Sizin tarafınızdan talep edildi {r_by.mention} YouTube müzik aracılığıyla 😎",)
         
         os.remove("final.png")
