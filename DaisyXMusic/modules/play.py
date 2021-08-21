@@ -1294,6 +1294,7 @@ async def lol_cb(b, cb):
         await b.send_photo(chat_id,
             photo="final.png",
             reply_markup=keyboard,
-            caption=f"▶️ <b>Oynatılıyor..</b> Sizin tarafınızdan talep edildi {r_by.mention} YouTube müzik aracılığıyla 😎",)
+            caption=f"▶️ <b>Oynatılıyor..</b> Sizin komutunuz ile youtube aracılığı ile çalmakta {r_by.mention} LacaseDemusic katkılarıyla 😎",
+        )
         
         os.remove("final.png")
