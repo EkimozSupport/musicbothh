@@ -302,7 +302,7 @@ async def p_cb(b, cb):
         by = temp[0][1].mention(style="md")
         msg = "<b>Şimdi Yürütülen</b> in {}".format(cb.message.chat.title)
         msg += "\n- " + now_playing
-        msg += "\n- Talia Müzik tarafından " + by
+        msg += "\n- MANGO Müzik tarafından " + by
         temp.pop(0)
         if temp:
             msg += "\n\n"
@@ -369,7 +369,7 @@ async def m_cb(b, cb):
         by = temp[0][1].mention(style="md")
         msg = "**Şimdi yürütülen** in {}".format(cb.message.chat.title)
         msg += "\n- " + now_playing
-        msg += "\n- Talia müzik tarafından " + by
+        msg += "\n- MANGO müzik tarafından " + by
         temp.pop(0)
         if temp:
             msg += "\n\n"
@@ -1096,7 +1096,7 @@ async def jiosaavn(client: Client, message_: Message):
                     # print(e)
                     await lel.edit(
                         f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} userbot için yoğun talepler nedeniyle grubunuza katılamadı! Kullanıcının grupta yasaklanmadığından emin olun."
-                        "\n\nOr @Loungemusicasistan'i grubunuza manuel olarak ekleyin ve tekrar deneyin</b>",
+                        "\n\nOr @MangoMusicplayer'i grubunuza manuel olarak ekleyin ve tekrar deneyin</b>",
                     )
     try:
         await USER.get_chat(chid)
