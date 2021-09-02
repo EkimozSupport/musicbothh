@@ -38,15 +38,15 @@ def _start(client, message):
             [
                 [
                     InlineKeyboardButton(
-                        "➕ Beni Grubuna ekle 🙋‍♀️", url=f"https://t.me/LaCasadeMusicbot?startgroup=true")],
+                        "➕ Beni Grubuna ekle 🙋‍♀️", url=f"https://t.me/MangoMusicalbot?startgroup=true")],
                 [
                     InlineKeyboardButton(
-                        "📲 Güncelleme duyuru", url=f"https://t.me/kurtadamoyunuu"), 
+                        "📲 Güncelleme duyuru", url=f"https://t.me/Kizilsancakbilgi"), 
                     InlineKeyboardButton(
-                        "💬 Sahip", url=f"https://t.me/furkanbeyy")
+                        "💬 Sahip", url=f"https://t.me/kizilsancaksahibi")
                 ],[
                     InlineKeyboardButton(
-                        "🛠 Kaynak kodu 🛠", url=f"https://t.me/mahoaga")
+                        "🛠 Kaynak kodu 🛠", url=f"https://t.me/kizilsancak")
                 ]
             ]
         ),
@@ -61,7 +61,7 @@ async def gstart(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "💬 Support Chat", url=f"https://t.me/kurtadamoyunuu"
+                        "💬 Support Chat", url=f"https://t.me/kizilsancak"
                     )
                 ]
             ]
@@ -101,10 +101,10 @@ def map(pos):
     elif(pos==len(tr.HELP_MSG)-1):
         url = f"https://t.me/{SUPPORT_GROUP}"
         button = [
-            [InlineKeyboardButton("➕ Beni Grubuna ekle 🙋‍♀️", url=f"https://t.me/LaCasadeMusic_bot?startgroup=true")],
-            [InlineKeyboardButton(text = '📲 Güncelleme kanalı', url=f"https://t.me/{UPDATES_CHANNEL}"),
-             InlineKeyboardButton(text = '💬 Support', url=f"https://t.me/{SUPPORT_GROUP}")],
-            [InlineKeyboardButton(text = '🛠 Kaynak Kodu 🛠', url=f"https://https://github.com/Mehmetbaba55/Telegram_Music_Bot_01")],
+            [InlineKeyboardButton("➕ Beni Grubuna ekle 🙋‍♀️", url=f"https://t.me/Mangomusicalbot?startgroup=true")],
+            [InlineKeyboardButton(text = '📲 Güncelleme kanalı', url=f"https://t.me/kizilsancakbilgi"),
+             InlineKeyboardButton(text = '💬 Support', url=f"https://t.me/kizilsancak")],
+            [InlineKeyboardButton(text = '🛠 Kaynak Kodu 🛠', url=f"https://https://t.me/sancakailesi")],
             [InlineKeyboardButton(text = '◀️', callback_data = f"help+{pos-1}")]
         ]
     else:
@@ -124,7 +124,7 @@ async def ghelp(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "🟡 Yardım için buraya tıklayın 🟡", url=f"https://t.me/LaCasadeMusic_bot?start"
+                        "🟡 Yardım için buraya tıklayın 🟡", url=f"https://t.me/mangomusicalbot?start"
                     )
                 ]
             ]
